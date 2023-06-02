@@ -23,7 +23,7 @@ class TranscribeService:
     # /home/akib/Desktop/AI_projects/Mir_speech_backend/models/cse_buet_bangla_t5
     
     def _transcribe_en(self):
-        en_model_path = os.path.join(self.model_path, "t5_base_en")
+        en_model_path = os.path.join(self.model_path, "t5-base")
         tokenizer = AutoTokenizer.from_pretrained(en_model_path)
         model = AutoModelForSeq2SeqLM.from_pretrained(en_model_path)
         input_ids = tokenizer(self.sentence, return_tensors="pt").input_ids
