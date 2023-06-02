@@ -4,5 +4,5 @@ from pydantic import UUID4, BaseModel
 from transcribe.utils import LangType
 
 class TranscribeRead(BaseModel):
-    sentence: str
+    message: str
     lang: Union[LangType, None] = LangType.en

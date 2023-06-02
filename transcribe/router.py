@@ -14,7 +14,7 @@ transcribe_router = APIRouter(
 
 @transcribe_router.post("", status_code=status.HTTP_200_OK)
 async def transcribe(tr_read: TranscribeRead):
-    transcribe_service = TranscribeService(sentence=tr_read.sentence, lang=tr_read.lang)
+    transcribe_service = TranscribeService(sentence=tr_read.message, lang=tr_read.lang)
     try:
         output = transcribe_service.transcribe()
         return output
